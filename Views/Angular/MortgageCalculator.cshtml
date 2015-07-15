@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "MortgageCalculator";
+}
+
+<h2>Mortgage Calculator</h2>
+<div ng-app="mortgageCalculator">
+    <div ng-controller="calculatorController">
+        <div class="form-group">
+            <label class="col-md-2">Mortgage Amount:</label>
+            <div class="col-md-10">
+                <input type="number" min="0" ng-model="amount" ng-change="calculatePayment()"
+                       class="form-control text-box single-line">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2">Term in Years:</label>
+            <div class="col-md-10">
+                <input type="number" min="0" ng-model="term" ng-change="calculatePayment()"
+                       class="form-control text-box single-line">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2">Interest Rate:</label>
+            <div class="col-md-10">
+                <input type="number" min="0" ng-model="rate" ng-change="calculatePayment()"
+                       class="form-control text-box single-line">
+            </div>
+        </div>
+
+        <div class="col-md-10">
+            <button ng-click="calculatePayment()" class="btn btn-default">
+                Calculate Payment
+                <span class=" glyphicon glyphicon-cog ">
+                    </span>
+            </button>
+        </div>
+        <div class="col-md-12">
+            <b><label>Payment:</label> </b> <span>{{payment | currency}}</span>
+        </div>
+        <div class="row">
+            <div class="col-md-12" ng-show="errorMessage=='Error'"><span>{{errorMessage}}</span></div>
+        </div>
+    </div>
+    
+ 
+</div>
+
+@section scripts
+{
+    <script src="~/Scripts/app/calculatorController.js"></script>
+}
+
+@section sideBar
+{
+    @Html.Partial("sideBar")
+}

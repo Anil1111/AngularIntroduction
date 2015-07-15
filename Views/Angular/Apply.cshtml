@@ -1,0 +1,87 @@
+﻿@{
+    ViewBag.Title = "Apply";
+}
+
+<h2>Apply</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <div ng-app="mortgageApplication">
+        <div ng-controller="applicationController">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default" id="panel1">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-target="#borrowerPanel"
+                               href="#borrowerPanel">
+                                Borrower Information
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="borrowerPanel" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            @Html.Partial("NamesEditor")
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default" id="panel2">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-target="#propertyPanel"
+                               href="#propertyPanel">
+                                Property Information
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="propertyPanel" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            @Html.Partial("PropertyEditor")
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="panel panel-default" id="panel3">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-target="#employmentPanel"
+                               href="#employmentPanel">
+                                Employment Information
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="employmentPanel" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            @Html.Partial("EmployeerEditor")
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p>
+        <input type="submit" value="Save" id="btnSave"/>
+    </p>
+}
+@section scripts
+{
+    <script src="~/Scripts/app/mortgageApplication.js"></script>
+    <script>
+        $("#btnSave").click(function (e) {
+
+            e.preventDefault();
+
+            // now trigger the form validation, result is 1 or 0
+            var result = $('form').valid();
+
+            
+        });
+
+    </script>
+}
+@section sideBar
+{
+        @Html.Partial("sideBar")
+}

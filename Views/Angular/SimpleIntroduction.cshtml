@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Simple Introduction";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div ng-app ng-init="loanAmount=150000;appraisedValue=180000">
+    <div >
+        <div class="form-group">
+            <label class="control-label col-md-2">Loan Amount:</label>
+            <div class="col-md-10">
+                <input type="number" class="form-control text-box single-line"
+                        min="0" ng-model="loanAmount">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Appraised Value:</label>
+            <div class="col-md-10">
+                <input type="number" class="form-control text-box single-line"
+                        min="0" ng-model="appraisedValue">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">LTV:</label>
+            <div class="col-md-10">
+                <span>{{(loanAmount/appraisedValue)*100| number:3}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section sideBar
+{
+    @Html.Partial("sideBar")
+}

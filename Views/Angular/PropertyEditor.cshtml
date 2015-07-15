@@ -1,0 +1,73 @@
+﻿@model jQueryFastFood.Models.PropertyInformation
+
+<div class="form-group">
+    @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.TextBoxFor(model => model.Address, htmlAttributes: new { @class = "form-control", ng_model = "PropertyInformation.Address" })
+        @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.TextBoxFor(model => model.City, htmlAttributes : new { @class = "form-control",  ng_model="PropertyInformation.City" } )
+        @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.State, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.TextBoxFor(model => model.State, htmlAttributes: new { @class = "form-control", ng_model = "PropertyInformation.State" })
+        @Html.ValidationMessageFor(model => model.State, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.Zip, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.TextBoxFor(model => model.Zip, htmlAttributes: new { @class = "form-control", ng_model = "PropertyInformation.Zip" })
+        @Html.ValidationMessageFor(model => model.Zip, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.LegalDescription, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.TextBoxFor(model => model.LegalDescription, htmlAttributes: new { @class = "form-control", ng_model = "PropertyInformation.LegalDescription" })
+        @Html.ValidationMessageFor(model => model.LegalDescription, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.LoanPurpose, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.TextBoxFor(model => model.LoanPurpose, htmlAttributes :new { @class = "form-control" , ng_model="PropertyInformation.LoanPurpose"} )
+        @Html.ValidationMessageFor(model => model.LoanPurpose, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.Occupancy, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.TextBoxFor(model => model.Occupancy, htmlAttributes: new { @class = "form-control", ng_model = "PropertyInformation.Occupancy" })
+        @Html.ValidationMessageFor(model => model.Occupancy, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.OriginalCost, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.TextBoxFor(model => model.OriginalCost, htmlAttributes: new { @class = "form-control", ng_model = "PropertyInformation.OriginalCost" })
+        @Html.ValidationMessageFor(model => model.OriginalCost, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.ExistingLiens, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.TextBoxFor(model => model.ExistingLiens, htmlAttributes: new { @class = "form-control", ng_model = "PropertyInformation.ExistingLiens" })
+        @Html.ValidationMessageFor(model => model.ExistingLiens, "", new { @class = "text-danger" })
+    </div>
+</div>
